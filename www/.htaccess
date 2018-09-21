@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+
+ErrorDocument 404 /index.php
+RewriteEngine On
+RewriteRule ^index\.php$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# RewriteCond %{REQUEST_URI} !\.css$
+# RewriteCond %{REQUEST_URI} !\.js$
+# RewriteCond %{REQUEST_URI} !\.pdf$
+# RewriteCond %{REQUEST_URI} !js/(.*)\.
+# RewriteCond %{REQUEST_URI} !immagini/(.*)\.
+# RewriteCond %{REQUEST_URI} !img/(.*)\.
+# RewriteCond %{REQUEST_URI} !fonts/(.*)\.
+# RewriteCond %{REQUEST_URI} !css/(.*)\.
+# RewriteCond %{REQUEST_URI} !include/(.*)\.
+# RewriteCond %{REQUEST_URI} !libs/(.*)\.
+# RewriteCond %{REQUEST_URI} !png$
+# RewriteCond %{REQUEST_URI} !jpg$
+# RewriteCond %{REQUEST_URI} !scn/index.php$
+# RewriteCond %{REQUEST_URI} !robots.txt$
+#RewriteCond %{REQUEST_URI} !scr_invaders/index.php$
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule . index.php [L]
+
+#RewriteRule ^([^/]+)/([^/]+)/?$ index.php?sez=$1&categ=$2 [L]
+#RewriteRule ^([^/]+)/?$ index.php?sez=$1 [L]
+
+#RewriteRule ^(.*)$ index.php?params=$1 [L,NC]
+#RewriteRule ^([^/]+)/([^/]+)/?$ index.php?sez=$1&categ=$2 [L]
+#RewriteRule ^([^/]+)/?$ index.php?sez=$1 [L]
+
+</IfModule>

@@ -1,0 +1,784 @@
+//colors
+$gallery: #000;
+$color_havelock_blue_approx: #4885ed;
+$green:#4885ed; //#28a745;
+$color2: $green;
+$color3: #343a40;
+$color4: #e9ecef;
+$color5: #333;
+$color6: #fff;
+$color7: #212529;
+$color8: #343a40;
+$color9: #4885ed;
+$color10: #6c757d;
+$blue: $color2;
+$bg2: #b8bcbf;
+$text: $color7;
+$white: #fff;
+$gray: #ccc;
+$gray2: #999;
+$gray3: #6c757d;
+$black: #212529;
+$color_cornflower_approx: #9ecaed;
+$color_japanese_laurel_approx: #009900;
+$color_mountain_mist_approx: #999999;
+$color_flame_pea_approx: #dc534a;
+
+//fonts
+$font_0: 'Raleway';
+$font_1: 'Raleway';
+$font_2: 'Raleway';
+$font_3: 'Raleway';
+$font_4: 'Raleway';
+$font_5: 'Raleway';
+$font_6: 'Raleway';
+$font_7: 'Raleway';
+$font_8: 'Raleway';
+$font_9: 'Playfair Display';
+
+//@extend-elements
+//original selectors
+//input, textarea
+%extend_1 {
+	// background-color: $gallery;
+	// color: $black;
+	// border: none;
+	color: $black;
+}
+
+/* global */
+*{
+    -webkit-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1.000), opacity 0.35s ease-in-out 0.1s;
+    -moz-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1.000), opacity 0.35s ease-in-out 0.1s;
+    -o-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1.000), opacity 0.35s ease-in-out 0.1s;
+    -ms-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1.000), opacity 0.35s ease-in-out 0.1s;
+    transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1.000), opacity 0.35s ease-in-out 0.1s;
+}
+body {
+	background: $color6;
+	color: $color7;
+	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	font-weight: 400;
+	font-size: 16px;
+	text-align: left;
+	vertical-align: middle;
+	margin: 0;
+}
+#content{
+	padding-top: 64px;
+}
+main{
+    overflow: hidden;
+}
+a{
+    text-decoration: none !important;
+    text-transform: none;    	
+    color: $color9;
+    &:hover{
+        color: $color7 !important;
+    }
+}
+pre{
+    color: $gray2;
+	white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+h1{
+    color: $color7;
+}
+.blog-header{
+	border-bottom: 1px solid #222;
+	display: none;
+}
+.blog-links a:not(:last-child){
+	margin-right: 15px;
+}
+.btn{
+    &:hover{
+        color: $white !important;
+    }    
+    font-family: $font_5;
+    font-size: 16px;
+    color: $color10;
+}
+.btn-outline-primary{
+    border-color: $green;
+    color: $color9;
+}
+.text-primary{
+    color: $color2 !important;
+}
+.text-muted{
+    
+}
+.display-4{
+    font-weight: 900;
+}
+.logo{    
+    font-size: 36px;
+    font-weight: 900;
+    font-family: $font_8;
+}
+.logo.logo1{
+    color: $color2;
+}
+.logo.logo2{
+    color: $text;
+}
+.link-normal{
+    &:hover{
+        color: $color3 !important;
+    }
+    font-family: $font_5;
+    color: $color10 !important;
+}
+.lead{
+    font-family: $font_5;
+    color: $color7;
+}
+.lead a{
+    color: $blue !important;
+    &:hover{
+        color: $color7 !important;
+    }
+}
+.card{
+    overflow: hidden;
+    background-color: $white;
+    color: $color7;
+}
+.card a{
+    &:hover{
+        color: $black !important;
+    }
+    color: $blue;    
+}
+.nav a{
+    font-family: $font_5;
+    &:hover{
+        color: $blue !important;
+    }
+}
+.bg-dark{
+    background-color: $color4 !important;
+}
+.blog-footer{
+    background-color: $color4;
+    color: $color7;
+    border-top: .0rem solid $black;
+	font-family: $font_8;
+	margin-top: 50px;
+}
+hr.no-margin_padding{
+    margin: 0;
+    padding: 0;
+}
+.error-bar{
+	color: red;
+	margin: 15px 0;
+}
+
+.spinner{
+	margin: 20px 0;
+}
+
+
+
+
+.color-1 {
+	color: $green;
+}
+.color-2 {
+	color: $color9;
+}
+.stilo1 {
+	color: $color_havelock_blue_approx;
+}
+.d_index2 {
+	font-size: 16px;
+}
+.stilo3 {
+	color: $color_havelock_blue_approx;
+	font-size: 18px;
+}
+.stilo5 {
+	color: $color_havelock_blue_approx;
+	font-size: 16px;
+}
+.Stile2 {
+	color: $color_havelock_blue_approx;
+	font-size: 16px;
+}
+
+
+hr {
+	// background-color: transparent;
+	// width: 40%;
+	// border: none;
+	// border-top: 1px dashed $black;
+	// color: $black;
+	// height: 1px;
+}
+input {
+	@extend %extend_1;
+}
+textarea {
+	@extend %extend_1;
+}
+#pagina {
+	max-width: 100%;
+	overflow: hidden;
+	margin: 8px;
+	margin-bottom: 50px;
+}
+#loading_bar {
+	display: none;
+	position: fixed;
+	opacity: 1;
+	width: 0;
+	height: 0;
+	background-color: transparent;
+	left: 0;
+	top: 0;
+	border: 1px solid $color_cornflower_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 7px;
+	outline: none;
+	border-color: $color_cornflower_approx;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 10px $color_cornflower_approx;
+}
+#struttura {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+	word-wrap: break-word;
+	&.hidden {
+		height: auto;
+		overflow: auto;
+	}
+}
+#struttura-fixed {
+	max-width: 900px;
+	left: 50%;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translateX(-50%);
+	width: 100%;
+	height: 100%;
+	word-wrap: break-word;
+	position: fixed;
+	overflow: auto;
+	z-index: 90;
+}
+#col-menu {
+	width: calc(20% - 10px);
+	float: left;
+	margin-right: 10px;
+	min-height: 60px;
+}
+#menu-close {
+	display: none;
+}
+#menu-mobile {
+	display: none;
+}
+#menu_block {
+	margin-bottom: 5px;
+	#main_menu {
+		width: 100%;
+		text-align: left;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+		li a {
+			display: block;
+			padding: 5px;
+			color: $black;
+			background-color: $bg2;
+			text-decoration: none;
+			margin-top: 0;
+			margin-right: 0;
+			margin-bottom: 1px;
+			margin-left: 0;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 4px;
+			&:hover {
+				color: $color_havelock_blue_approx;
+			}
+			&.active {
+				color: $color_havelock_blue_approx;
+			}
+		}
+	}
+}
+.col-cent {
+	width: 60%;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	min-height: 18px;
+	float: left;
+	&.main {
+		background-color: $bg2;
+	}
+}
+.col-dx {
+	width: calc(20% - 10px);
+	float: right;
+}
+.table-dx {
+	background-color: $bg2;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	margin-bottom: 5px;
+	min-height: 12px;
+	padding: 5px;
+}
+.space {
+	margin-top: 10px;
+}
+.cell {
+	padding: 10px;
+}
+.logincell {
+	padding: 2px;
+	color: $color_havelock_blue_approx;
+	margin-bottom: 5px;
+}
+.xfr1 {
+	font-size: 16px;
+	color: #efefef;
+}
+.style2 {
+	font-size: 10px;
+	color: $color_havelock_blue_approx;
+	border-color: $color_mountain_mist_approx;
+}
+.style4 {
+	color: $color_havelock_blue_approx;
+	font-size: 16px;
+	font-weight: bold;
+}
+.hack_menu {
+	color: $color_havelock_blue_approx;
+}
+.style7 {
+	font-size: 16px;
+	color: $color_havelock_blue_approx;
+}
+.tab-pratiche {
+	border: 1px groove $bg2;
+	padding: 3px;
+}
+.warning {
+	// background-color: $color_flame_pea_approx;
+	border: 1px solid $color_flame_pea_approx;	
+}
+#list-home {
+	text-align: left;
+	width: 70%;
+	ul li {
+		list-style-type: none;
+	}
+}
+#assistenza {
+	width: 90%;
+	table {
+		width: 100%;
+	}
+}
+#form1 {
+	input[type=text] {
+		width: 100%;
+	}
+	textarea {
+		width: 100%;
+	}
+}
+.formsDiv {	
+	margin: 0 auto;
+	table {
+		width: 100%;
+	}
+}
+.forms {
+	input[type=text] {
+		width: 100%;
+	}
+	input[type=password] {
+		width: 100%;
+	}
+	textarea {
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+}
+@media screen and(max-width: 450px) {
+	#pagina {
+		margin-bottom: 8px;
+	}
+	#struttura {
+		width: 100%;
+		&.hidden {
+			height: 0;
+			overflow: hidden;
+		}
+	}
+	#col-menu {
+		min-height: 0;
+	}
+	#col-menu-mobile {
+		position: fixed;
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		top: 10px;
+	}
+	#menu {
+		display: block;
+		&.show {
+			display: block;
+			position: fixed;
+			width: calc(100% - 80px);
+			height: calc(100% - 80px);
+			padding: 40px;
+			background-color: $gallery;
+			overflow: auto;
+			top: 0;
+			left: 0;
+			z-index: 90;
+		}
+	}
+	#menu-content {
+		display: none;
+		&.show {
+			display: block;
+		}
+	}
+	#menu-close {
+		//Instead of the line below you could use @include user-select($select)
+		user-select: none;
+		display: block;
+		position: absolute;
+		top: 20px;
+		left: 10px;
+		cursor: pointer;
+		color: $color_havelock_blue_approx;
+		background-color: $bg2;
+		padding: 8px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 5px;
+		text-align: center;
+		z-index: 100;
+		width: 35px;
+	}
+	#menu-mobile {
+		display: none;
+		position: absolute;
+		top: 20px;
+		left: 10px;
+		cursor: pointer;
+		color: $color_havelock_blue_approx;
+		background-color: $bg2;
+		padding: 8px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 5px;
+		text-align: center;
+		width: 35px;
+	}
+	.col-cent {
+		width: 100%;
+	}
+	.col-dx {
+		display: none;
+	}
+	#assistenza {
+		width: 100%;
+		table {
+			width: 100%;
+		}
+	}
+	.formsDiv {
+		width: 100%;
+		table {
+			width: 100%;
+		}
+	}
+	.forms {
+		input[type=text] {
+			width: 90%;
+		}
+		input[type=password] {
+			width: 90%;
+		}
+	}
+	#logo img {
+		min-width: 200%;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(-25%);
+	}
+	#form1 input[type=text] {
+		width: 90%;
+	}
+}
+#menu.show {
+	display: block;
+	position: initial;
+	width: auto;
+	height: auto;
+	padding: auto;
+	background-color: none;
+	overflow: auto;
+	top: auto;
+	left: auto;
+	z-index: auto;
+}
+
+
+
+
+// NAVIGATION
+
+.navbar{
+    padding: 0;
+    background-color: $color4 !important;
+    color: $gray3 !important;
+	font-family: $font_5;
+	min-height: 64px;
+	// height: 64px;
+	// max-height: 64px;
+}
+.navbar-brand{
+	margin: 0 20px;
+}
+.navbar-nav{	
+	padding: 8px 20px;
+}
+.nav-item{
+	display: flex;
+	align-items: center;
+}
+.nav-item .btn{
+	@media (min-width: 992px){
+		margin: 0 8px;
+	}
+}
+.navbar-light .navbar-nav .nav-link {
+    font-family: $font_5;
+    color: $gray3;
+    
+    &:hover{
+        color: $color9 !important;
+    }    
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+    color: $color5;    
+    &:hover{
+        color: $color5 !important;
+    }
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: $green !important;
+}
+
+.navbar-light .navbar-toggler {
+    color: $green;    
+    border: 0;
+}
+
+.dropdown-menu{
+    font-size: 16px;
+    background-color: $color4;
+}
+
+.dropdown-menu .dropdown-item{    
+    color: $gray;
+    &:hover{
+        color: $black !important;
+    }
+}
+
+.dropdown-divider {
+    border-top: 1px solid $black;
+}
+
+.navbar .form-control {
+    height: auto;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+// .navbar-collapse.show:not() .navbar .btn{
+//     font-size: 16px;
+//     padding: 0;
+//     border-color: transparent;
+// 	padding: 0px 8px !important;
+// 	border-radius: 4px;
+// 	background-color: $gray3;
+// 	color: #fff;
+// 	display: flex;
+// 	align-content: center;
+// 	align-items: center;
+// 	margin: 0 8px;
+// 	&:hover{
+// 		background-color: $color3;
+// 	}
+// }
+.mobile-search{
+    margin-bottom: 20px !important;
+}
+.navbar-toggler span {
+    background-color: $color10;
+}
+.navbar-collapse{
+	margin-bottom: 0px;
+}
+
+
+// PAGE CONTAINER
+.page-container{
+	min-height: calc(100vh - 300px);
+	@media screen and(max-width: 991px) {
+		min-height: calc(100vh - 250px);	
+	}
+}
+.opaque{
+    opacity: 0;
+}
+#cookie-popup{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 10px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	width: 100%;
+	border-top: 1px solid #efefef;	
+	align-items: center;
+}
+#cookie-popup .text{
+	max-width: 80%;
+}
+#cookie-popup .close{
+	font-size: 16px;
+	background-color: $color2;
+	color: #fff;
+	border-radius: 100%;
+	min-width: 30px;
+	min-height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+}
+#cookie-popup .close .inner{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+// HOMEPAGE
+.more-link, .screen-reader-text{
+	display: none;
+}
+.blog-link{
+	color: $black !important;
+	&:hover{
+		color: $color3 !important;		
+	}
+}
+.home-title{
+	font-family: $font_9;
+	font-size: 70px;
+	@media screen and (max-width: 450px) {
+		font-size: 42px;
+	}
+}
+.hw-center{
+	text-align: center;
+	margin: 0 auto;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.hw-pad{
+	padding: 20px 20px 0px 20px;
+}
+.blog-post{
+	margin-bottom: 70px;
+}
+.blog-post-title{
+	// font-size: 42px;
+	font-family: $font_9;
+	font-size: 25px;
+}
+.single-post .title{
+	font-family: $font_9;
+	font-size: 42px;
+}
+.posts-container{
+	margin-top: 70px;
+}
+.section-title{
+	font-size: 42px;
+	font-family: $font_9;
+}
+.sticky-posts .title{
+	font-family: $font_9;
+}
+
+// frankie
+.frankie .title{
+	font-family: $font_9;
+	font-size: 42px;
+}
+
+.blog-pagination>.btn{
+	border-radius: .2rem;
+}
+
+
+
+
+
+
+@media screen and(min-width: 992px) {
+    .mobile-search, .menu-categories, .only_mobile{
+        display: none;
+	}    
+}
+
+@media screen and(max-width: 991px) {
+    .blog-header{
+        display: none;
+    }
+    .nav-scroller{
+        display: none;
+    }
+
+    .dropdown-menu{
+        font-size: 16px;
+        background-color: transparent;
+    }
+    .dropdown-menu .dropdown-item{    
+        color: $gray3;
+        background-color: transparent !important;
+        &:hover{
+            color: $white !important;
+        }
+	}	
+	.btn:hover{
+		color: inherit !important; 
+		background-color: inherit !important;
+	}
+}
