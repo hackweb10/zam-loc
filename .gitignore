@@ -1,0 +1,12 @@
+# Exclusions
+.DS_Store
+.idea
+.vscode
+Thumbs.db
+node_modules
+bower_components
+files
+api/uploads
+header/visite.txt
+hw_neux
+.gradle
