@@ -10,7 +10,7 @@ if($_POST['form'] == 1){
     $urgenza = mysql_real_escape_string($_POST['urgenza']);
     $descrizione_richiesta = mysql_real_escape_string($_POST['descrizione_richiesta']);
 	
-	$headers = 'From: h@ckweb webmaster <webmaster@hackweb.altervista.org>' . "\r\n";
+	$headers = 'From: h@ckweb webmaster <webmaster@zamara.altervista.org>' . "\r\n";
 	$headers .= "MIME-Version: 1.0\n";
 	$headers .= "Content-Type: text/html; charset=\"utf-8\"\n";
 	$headers .= "Content-Transfer-Encoding: 7bit\n\n";

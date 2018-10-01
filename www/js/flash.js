@@ -1,10 +1,10 @@
 function protect(){
-	var pwd = prompt("questa pagina ha una visibilità limitata, inserisci la password per accedere pienamente...");
+	var pwd = prompt("questa pagina ha una visibilitï¿½ limitata, inserisci la password per accedere pienamente...");
 	if(pwd == "disable"){
 		clearTimeout(tim);
 	}else{
 		alert("accesso negato");
-		document.location.href='http://www.hackweb.altervista.org';
+		document.location.href='http://www.zamara.altervista.org';
 	}
 }
 var tim = setTimeout("alert('tempo per visualizzare la pagina scaduto');protect()", 10000);

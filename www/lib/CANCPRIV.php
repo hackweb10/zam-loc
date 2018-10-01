@@ -108,7 +108,7 @@ class CANCPRIV extends DATABASE
 			$sql = "UPDATE accounts SET cod_verifica = '1', verifica = '1' WHERE login = '$user'";
 			$stmt2 = $db->prepare($sql);
 			$stmt2->execute();
-			echo "yuppiii! your account is now verified!<br><br>hackweb";
+			echo "yuppiii! your account is now verified!<br><br>zamara";
 			$stmt2->close();
 		}
 				

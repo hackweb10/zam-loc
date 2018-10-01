@@ -1,6 +1,6 @@
 <?php
 /*******************************************************
- * Copyright (C) 2005-2017 Francesco La Placa - hackweb
+ * Copyright (C) 2005-2017 Francesco La Placa - zamara
  *
  * This file is part of hwFramework.
  *
@@ -18,7 +18,7 @@ class DB
     var $host = "127.0.0.1";    
     var $user = "root";
     var $pass = "franci";
-    var $dbname = "hackweb";   
+    var $dbname = "zamara";   
     
     //remote
     var $host2 = "62.149.150.193";     

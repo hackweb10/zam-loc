@@ -221,7 +221,7 @@ Non rispondere al messaggio, &egrave; un messaggio automatico!";
 
 		if($row[0] == $code){
 			mysql_query("UPDATE accounts SET cod_verifica = '', verifica = '1' WHERE login = '$user'");
-			echo "complimenti! il tuo account &egrave; ora verificato<br><br>hackweb";
+			echo "complimenti! il tuo account &egrave; ora verificato<br><br>zamara";
 		}else{
 			echo "il tuo codice &egrave; scaduto";
 		}

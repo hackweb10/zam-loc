@@ -5,7 +5,7 @@ var pagina = '';
 var utente = '';
 var potere = 0;
 var avatar = 'avatar_base.png';
-var informazioni = 'Version 5.0<br>© hackweb, Riccione / Bologna 2002 - 2018';
+var informazioni = 'Version 5.0<br>© zamara, Riccione / Bologna 2002 - 2018';
 var clockInterval;
 var clock;
 var sez = ['','','',''];
@@ -15,7 +15,7 @@ var initial_uri;
 var menu_mobile;
 var first_loaded = false;
 var menu_class = '.hw-link';
-var wp_endpoint = 'https://www.hackweb.it/hw_wordpress/wp-json/wp/v2/'; //'http://localhost/hackweb/hw_wordpress/wp-json/wp/v2/'; 
+var wp_endpoint = 'https://www.zamara.it/hw_wordpress/wp-json/wp/v2/'; //'http://localhost/zamara/hw_wordpress/wp-json/wp/v2/'; 
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];

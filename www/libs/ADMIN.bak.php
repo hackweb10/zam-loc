@@ -1,6 +1,6 @@
 <?php
 /*******************************************************
-* Copyright (C) 2005-2018 Francesco La Placa - hackweb
+* Copyright (C) 2005-2018 Francesco La Placa - zamara
 *
 * This file is part of hwFramework.
 *
@@ -55,7 +55,7 @@ class ADMIN extends DB
             $mex = "Benvenuto ".$data->username.",<br>
             Per completare la tua registrazione clicca il link di seguito:
             <br><br>
-            https://hackweb.it/code?c=".$cod_verifica."&u=".$data->username." <br><br>
+            https://zamara.it/code?c=".$cod_verifica."&u=".$data->username." <br><br>
             --------------------------<br>
             codice di verifica: ".$cod_verifica."<br>
             --------------------------<br><br>
@@ -63,7 +63,7 @@ class ADMIN extends DB
 
             $headers  = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= "From: hackweb <noreply@hackweb.it>" . "\r\n";
+            $headers .= "From: zamara <noreply@zamara.it>" . "\r\n";
             
             $mex2 = "Capo, abbiamo un nuovo utente: 
             <br>
@@ -78,10 +78,10 @@ class ADMIN extends DB
 
             ".$data->messaggio;
 
-            if(!mail($data->email, "hackweb - registrazione", $mex, $headers)){
+            if(!mail($data->email, "zamara - registrazione", $mex, $headers)){
                 $result['success'] = 4;
             }else{                
-                mail('francesco.laplaca@gmail.com', "hackweb - nuovo utente", $mex2, $headers);
+                mail('francesco.laplaca@gmail.com', "zamara - nuovo utente", $mex2, $headers);
                 $data->password = md5($data->password);
                 //registrazione
                 $sql = "INSERT INTO accounts (login, password, mail, cod_verifica) VALUES(? , ?, ?, ?)";

@@ -25,7 +25,7 @@ $uri_lang = '';
 $default_lang = 'en';
 $error404 = false;
 $accepted_langs = array('it','en');
-$wp_endpoint = 'https://www.hackweb.it/hw_wordpress/wp-json/wp/v2/'; //'http://localhost/hackweb/hw_wordpress/wp-json/wp/v2/';
+$wp_endpoint = 'https://www.zamara.it/hw_wordpress/wp-json/wp/v2/'; //'http://localhost/zamara/hw_wordpress/wp-json/wp/v2/';
 
 function __autoload($nome_classe){
     require_once ABS.'/'.$nome_classe.'.php';

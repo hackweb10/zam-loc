@@ -3,7 +3,7 @@
 $relative_path = __DIR__.'/../libs/head.php';
 if(require_once($relative_path)) $first_load = true;
 if(!$first_load) ob_start("ob_gzhandler"); // AJAX size
-$head->title = 'hackweb'; // SEO
+$head->title = 'zamara'; // SEO
 ?>
 
 <hr>

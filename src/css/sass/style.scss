@@ -639,6 +639,12 @@ textarea {
 }
 
 
+// CONTAINER STYLES
+.container2{
+	margin: 0 50px;
+}
+
+
 // PAGE CONTAINER
 .page-container{
 	min-height: calc(100vh - 300px);
@@ -781,4 +787,9 @@ textarea {
 		color: inherit !important; 
 		background-color: inherit !important;
 	}
+}
+
+
+.google_search{
+	width: 80%;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "hackweb",
+  "name": "zamara",
   "version": "1.0.0",
-  "description": "hackweb\r =======\r the universal network",
+  "description": "zamara\r =======\r the universal network",
   "main": "gulpfile.js",
   "directories": {
     "src": "src"
@@ -37,14 +37,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frank10gm/hackweb.git"
+    "url": "git+https://github.com/frank10gm/zamara.git"
   },
   "author": "frankie",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/frank10gm/hackweb/issues"
+    "url": "https://github.com/frank10gm/zamara/issues"
   },
-  "homepage": "https://github.com/frank10gm/hackweb#readme",
+  "homepage": "https://github.com/frank10gm/zamara#readme",
   "engines": {
     "yarn": ">= 1.0.0"
   }

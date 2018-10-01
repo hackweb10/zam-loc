@@ -4,7 +4,7 @@ $relative_path = __DIR__.'/../libs/head.php';
 $first_load = (@$head_loaded) ? true : false;
 if(!$first_load) require_once($relative_path);
 if(!$first_load) ob_start("ob_gzhandler"); // AJAX size
-$head->title = 'hackweb'; // SEO
+$head->title = 'Studio Zamara'; // SEO
 hw_setTitle($head->title);
 ?>
 
@@ -17,44 +17,52 @@ hw_setTitle($head->title);
         Descrizione dello studio.<br>
         "Tutte le domande richiedono una risposta certa o, almeno, una profonda ricerca."
     </p>
+    <div class="google_search">
+        <form action="http://google.com/search" target="_blank"> 
+            <input name="q" placeholder="Google" style="width:80%; max-width:400px;">
+            <input type="submit" value="Cerca" style="width:80px;">
+        </form>
+    </div>
     <!-- <p class="lead mb-0"><a href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>post/hw" class="text-white font-weight-bold link hw-link">Continue reading</a></p> -->
     </div>
 </div>
 
-<div class="container sticky-posts">    
-    <div class="row mb-2">
-        <div class="col-md-6">
-        <div class="card flex-md-row mb-4 shadow-sm h-md-250 sticky_post-0">
-            <div class="card-body d-flex flex-column align-items-start">
-            <strong class="d-inline-block mb-2 text-primary categories"></strong>
-            <h3 class="mb-0">
-                <a class="text-dark title" >...</a>
+<div class="container2">    
+    <div class="row">
+
+        <div class="col-md-9 calendario">
+            <h3 class="pb-3 mb-4 border-bottom section-title">
+                Calendario
             </h3>
-            <div class="mb-1 text-muted date"></div>
-            <p class="card-text mb-auto excerpt"></p>
-            <a class="link opaque hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>post/">Continue reading</a>
+
+            <div class="posts">            
+                <div class="posts-wrapper"></div>
+                <div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div><br><br><br></div>
             </div>
-            <!-- <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap"> -->
+
+            <nav class="blog-pagination">            
+                <a class="btn btn-outline-secondary load_more" >Altro</a>
+            </nav>
         </div>
-        </div>
-        <div class="col-md-6">
-        <div class="card flex-md-row mb-4 shadow-sm h-md-250 sticky_post-1">
-            <div class="card-body d-flex flex-column align-items-start">
-            <strong class="d-inline-block mb-2 text-primary categories"></strong>
-            <h3 class="mb-0">
-                <a class="text-dark title" >...</a>
+
+        <div class="col-md-3 blog-main">
+            <h3 class="pb-3 mb-4 border-bottom section-title">
+                RSS Feed
             </h3>
-            <div class="mb-1 text-muted date"></div>
-            <p class="card-text mb-auto excerpt"></p>
-            <a class="link opaque hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>post/">Continue reading</a>
+
+            <div class="feed">            
+                <div class="posts-wrapper" id="feed"></div>
+                <div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div><br><br><br></div>
             </div>
-            <!-- <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap"> -->
-        </div>
+
+            <nav class="blog-pagination">            
+                <!-- <a class="btn btn-outline-secondary load_more" >Altro</a> -->
+            </nav>
         </div>
     </div>
 </div>
 
-<div class="container posts-container">
+<!-- <div class="container posts-container">
     <div class="row">
         <div class="col-md-12 blog-main">
         <h3 class="pb-3 mb-4 border-bottom section-title">
@@ -67,31 +75,12 @@ hw_setTitle($head->title);
         </div>
 
         <nav class="blog-pagination">            
-            <a class="btn btn-outline-secondary load_more" >Load more</a>
+            <a class="btn btn-outline-secondary load_more" >Altro</a>
         </nav>
 
-        </div><!-- /.blog-main -->
-
-        <!-- <aside class="col-md-4 blog-sidebar">
-            <div class="p-3 mb-3 bg-light rounded">
-                <h4 class="font-italic">Info</h4>
-                <p class="mb-0">                    
-                                      
-                </p>
-            </div>
-
-            <div class="p-3">
-         
-            </div>
-
-            <div class="p-3">
-  
-            </div>
-        </aside> -->
-
+        </div>
     </div>
-
-</div>
+</div> -->
 
 
 <script>
@@ -192,7 +181,7 @@ hw_setTitle($head->title);
     //     })
     // }
 
-    // load more
+    // Altro
     $('.load_more').click(function(e){
         home_blog += 1;        
         $('.posts .spinner').show();
@@ -211,6 +200,31 @@ hw_setTitle($head->title);
                 $('.posts .posts-wrapper').append(data.render[i]);                          
             }
         })
+    });    
+    
+    $.ajax({
+        url: 'https://cors.io/?http://www.ipsoa.it/RSS-Feeds/Lavoro.aspx',
+        type: 'GET',
+        dataType: "xml"
+    }).done(function(xml) {
+        $('.feed .spinner').hide();
+
+        $.each($("item", xml), function(i, e) {
+
+            var blogNumber = i + 1 + ". ";
+
+            var itemURL = ($(e).find("link"));
+            var blogURL = "<a target=\"_blank\" href='" + itemURL.text() + "'>Scopri di più</a>";
+
+            var itemTitle = ($(e).find("title"));
+            var blogTitle = "<h5>" + blogNumber + itemTitle.text() + "</h5>";
+            var itemDesc = ($(e).find("description"));
+            var blogDesc = "<p style=\"margin-bottom: 0px;\">"+itemDesc.text() + "</p>";
+
+            $("#feed").append('<div style=\"margin-bottom: 20px;\">'+blogTitle+blogDesc+blogURL+'</div>');            
+            return i<9;
+
+        });
     });
 </script>
 

@@ -3,7 +3,7 @@ $relative_path = __DIR__.'/../libs/head.php';
 $first_load = (@$head_loaded) ? true : false;
 if(!$first_load) require_once($relative_path);
 if(!$first_load) ob_start("ob_gzhandler"); // AJAX size
-$head->title = 'hackweb'; // SEO
+$head->title = 'zamara'; // SEO
 if($first_load){    
     $wp_lang = ($lang === $default_lang) ? '' : $lang;
     $endpoint = $wp_endpoint.'posts/?_embed&lang='.$wp_lang.'&slug='.$cur_slug;      

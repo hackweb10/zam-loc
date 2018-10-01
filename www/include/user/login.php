@@ -1,7 +1,7 @@
 <?php 
 @session_start();
 //SEO
-// $head->title = 'hackweb | login';
+// $head->title = 'zamara | login';
 if(!isset($_SESSION['username'])):
 ?>
 

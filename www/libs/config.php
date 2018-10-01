@@ -2,8 +2,8 @@
 //inizializzazione
 require_once('head.php');
 
-$head->title = 'hackweb';
-$head->description = 'Hackweb is the Global Network. "All the questions need a real answer or, at least, a deep investigation."';
+$head->title = 'zamara';
+$head->description = 'Zamara is the Global Network. "All the questions need a real answer or, at least, a deep investigation."';
 
 //https redirect
 if(!isset($_SERVER["HTTPS"]) && $_SERVER['SERVER_NAME'] != 'localhost' && strpos($_SERVER['SERVER_NAME'], '.loc') === false ){
@@ -68,7 +68,7 @@ if(!@$params[0]) @$params[0] = '';
 
 switch (@$params[0]) {    
     case 'hero':
-        header('Location: http://hackweb.herokuapp.com');
+        header('Location: http://zamara.herokuapp.com');
         die();
     default:    
         $lang = (@$params[0] == '') ? $lang : @$params[0];        
@@ -141,10 +141,10 @@ if($error404 || $link === '404') {
     header("HTTP/1.0 404 Not Found");        
 }
 
-$connection = "ADMIN.php";
-require_once($connection);
+// $connection = "ADMIN.php";
+// require_once($connection);
 
-$acc = new ADMIN;
-$result = $acc->checkLogin();
-$utente = @$_SESSION['username'];
+// $acc = new ADMIN;
+// $result = $acc->checkLogin();
+// $utente = @$_SESSION['username'];
 ?>

@@ -4,7 +4,7 @@ $first_load = (@$head_loaded) ? true : false;
 if(!$first_load) require_once($relative_path);
 if(!$first_load) ob_start("ob_gzhandler"); // AJAX size
 if($first_load){    
-    $head->title = 'hackweb | '.$_SESSION['cur_slug']; // SEO
+    $head->title = 'zamara | '.$_SESSION['cur_slug']; // SEO
     $wp_lang = ($lang === $default_lang) ? '' : $lang;
     //curl cat
     $endpoint = $wp_endpoint.'categories?slug='.$cur_slug.'&lang='.$wp_lang;	        
@@ -33,7 +33,7 @@ if($first_load){
     curl_close($curl); 
     $monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 }else{
-    $head->title = 'hackweb';
+    $head->title = 'zamara';
 }
 hw_setTitle($head->title);
 ?>

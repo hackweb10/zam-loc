@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <meta name="description" content="hackweb">
+    <meta name="description" content="zamara">
     <meta property="og:image" content="<?php echo $full_link.'images/logo.png'; ?>" />
     <meta property="og:title" content="<?php echo $head->title; ?>" />
-    <meta property="og:description" content="hackweb"/>
-    <meta property="og:site_name" content="hackweb"/>
+    <meta property="og:description" content="zamara"/>
+    <meta property="og:site_name" content="zamara"/>
     <meta property="og:type" content="website"/>
     <link rel="icon" type="image/png" href="favicon.png?v=<?php echo $version; ?>"/>
     <link rel="alternate" hreflang="it" href="<?php echo $protocol.'://'.$_SERVER["HTTP_HOST"].HOST.ltrim($canonical_link, '/'); ?>" />

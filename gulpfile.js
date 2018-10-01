@@ -90,7 +90,7 @@ gulp.task('node_pack_css', ()=>{
 gulp.task('js', function() {
     return gulp.src(['src/js/*.js'])   
     .pipe(flatten())    
-    .pipe(uglify({mangle:{}}))
+    // .pipe(uglify({mangle:{}}))
     .pipe(concat('cs.js'))
     .pipe(gulp.dest('www/js'))
 });

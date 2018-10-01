@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hackweb`
+-- Database: `zamara`
 --
 
 -- --------------------------------------------------------
@@ -150,7 +150,7 @@ INSERT INTO `assistenza` (`id`, `nome`, `cognome`, `mail`, `telefono`, `urgenza`
 (28, 'afaefea', '', 'feafea@fe.afae', '', 1, '', 'fefe', '0000-00-00 00:00:00'),
 (29, 'fae', '', 'fea', '', 1, '', 'fea', '0000-00-00 00:00:00'),
 (30, 'fae', '', 'fea', '', 1, '', 'fea', '0000-00-00 00:00:00'),
-(31, 'Angelo', 'Marino', 'ilmarino@libero.it', '3408649307', 3, '', 'Ho bisogno di essere hackewebbato!\r\n#hackwebbami.\r\nGrazie', '0000-00-00 00:00:00');
+(31, 'Angelo', 'Marino', 'ilmarino@libero.it', '3408649307', 3, '', 'Ho bisogno di essere hackewebbato!\r\n#zamarabami.\r\nGrazie', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

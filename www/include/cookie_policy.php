@@ -1,8 +1,8 @@
 <div class="container">
     <br>
-    <h1>Cookie Policy for Hackweb</h1>
+    <h1>Cookie Policy for Zamara</h1>
 
-    <p>This is the Cookie Policy for Hackweb, accessible from www.hackweb.it</p>
+    <p>This is the Cookie Policy for Zamara, accessible from www.zamara.it</p>
 
     <p><strong>What Are Cookies</strong></p>
 
@@ -110,7 +110,7 @@
     <p>However if you are still looking for more information then you can contact us through one of our preferred contact methods:</p>
 
     <ul>
-    <li>Email: <a href="mailto:info@hackweb.it">info@hackweb.it</a></li>
+    <li>Email: <a href="mailto:info@zamara.it">info@zamara.it</a></li>
 
     </ul>
 </div>  

@@ -113,7 +113,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Park // by hackweb';
+        this.title = 'Park // by zamara';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -329,7 +329,7 @@ var BrandService = /** @class */ (function () {
         this.http = http;
         this.messageService = messageService;
         // private brandsUrl = 'api/brands';  // URL to web api
-        this.brandsUrl = 'https://www.hackweb.it/api/park'; // URL to web api
+        this.brandsUrl = 'https://www.zamara.it/api/park'; // URL to web api
     }
     // getBrands(): Brand[] {
     //   return BRANDS;
@@ -851,7 +851,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/francesco/websites/hackweb/hw_ux/hw-ng/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/francesco/websites/zamara/hw_ux/hw-ng/src/main.ts */"./src/main.ts");
 
 
 /***/ })

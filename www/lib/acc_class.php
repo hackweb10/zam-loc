@@ -85,7 +85,7 @@ class ACCOUNT extends DATABASE
 		$cod_criptato = md5($codice);
 		$mex = "Welcome $user,<br>
 		to complete your registration click the link below:<br><br>
-		http://hackweb.it/insert_code.php?code=$cod_criptato&user=$user<br><br>
+		http://zamara.it/insert_code.php?code=$cod_criptato&user=$user<br><br>
 		--------------------------<br>
 		verification code: $cod_criptato<br>
 		--------------------------<br><br>
@@ -93,9 +93,9 @@ class ACCOUNT extends DATABASE
 
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= "From: hackweb Administrator <admin@hackweb.it>" . "\r\n";
+		$headers .= "From: zamara Administrator <admin@zamara.it>" . "\r\n";
 
-		mail($mail, "Registration to hackweb", $mex, $headers);
+		mail($mail, "Registration to zamara", $mex, $headers);
 		$pwd = md5($pwd);
 
 		$this->sql_open();
@@ -156,7 +156,7 @@ class ACCOUNT extends DATABASE
 			$sql = "UPDATE accounts SET cod_verifica = '1', verifica = '1' WHERE login = '$user'";
 			$stmt2 = $db->prepare($sql);
 			$stmt2->execute();
-			echo "yuppiii! your account is now verified!<br><br>hackweb";
+			echo "yuppiii! your account is now verified!<br><br>zamara";
 			$stmt2->close();
 		}
 

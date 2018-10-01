@@ -4,7 +4,7 @@ function url(){
   "%s://%s%s%s",
   isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
   $_SERVER['SERVER_NAME'],
-  '/hackweb/test',
+  '/zamara/test',
   isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'].'/' : '/'
 );
 }
