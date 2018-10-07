@@ -25,7 +25,7 @@ $acc->checkLogin();
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
 			</a> -->
 			<?php if(!isset($_SESSION['username'])): ?>
-				<a class="btn btn-sm btn-outline-secondary hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>user/login">Sign in</a>
+				<a class="btn btn-sm btn-outline-secondary hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>user/login">Accedi</a>
 			<?php else: ?>
 				<a class="btn btn-sm btn-outline-secondary hw-link" href="logout">Sign out</a>
 			<?php endif; ?>
@@ -44,36 +44,13 @@ $acc->checkLogin();
 		
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto">
-				<!-- <li class="nav-item">
-					<a class="nav-link hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']; ?>">Home <span class="sr-only">(current)</span></a>
-				</li> -->
-				<?php if($_SESSION['lang'] == 'it'): ?>
-					<!-- <li class="nav-item dropdown menu-categories">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Categories
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>cat/omelie">Omelie</a>							
-						</div> 
-					</li> -->
-				<?php endif; ?>
-
-				<!-- DEV10N -->
-				<!-- <li class="nav-item">
-					<a class="nav-link hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>frankie">Frankie</a>					
-				</li> -->
-				<?php if($_SESSION['lang'] == 'it'): ?>
-					<!-- <li class="nav-item">
-						<a class="nav-link hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>cat/omelie">Omelie</a>
-					</li> -->
-				<?php endif; ?>
-				<!-- 
+			<ul class="navbar-nav ml-auto">											
+				
 				<li class="nav-item">
-					<a class="nav-link hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>books">Books</a>
-				</li> -->
+					<a class="nav-link hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>zamara">Pagina</a>					
+				</li>												
 
-				<!-- <li class="nav-item dropdown">
+				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Dropdown
 					</a>
@@ -83,14 +60,11 @@ $acc->checkLogin();
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 					</div>
-				</li>                 -->
-				<!-- <li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
-				</li> -->   
+				</li>                				
 				
 				<?php if(!isset($_SESSION['username'])): ?>					
 					<li class="nav-item">
-						<a class="btn btn-sm btn-outline-secondary hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>user/login">Sign in</a>
+						<a class="btn btn-sm btn-outline-secondary hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>user/login">Accedi</a>
 					</li>
 					<!-- <li class="nav-item">
 						<a class="nav-link hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>user/login">Sign in</a>

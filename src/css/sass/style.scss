@@ -36,6 +36,8 @@ $font_7: 'Raleway';
 $font_8: 'Raleway';
 $font_9: 'Playfair Display';
 
+$font-normal: 14px;
+
 //@extend-elements
 //original selectors
 //input, textarea
@@ -59,7 +61,7 @@ body {
 	color: $color7;
 	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: $font-normal;
 	text-align: left;
 	vertical-align: middle;
 	margin: 0;
@@ -760,7 +762,7 @@ textarea {
 
 @media screen and(min-width: 992px) {
     .mobile-search, .menu-categories, .only_mobile{
-        display: none;
+        // display: none;
 	}    
 }
 

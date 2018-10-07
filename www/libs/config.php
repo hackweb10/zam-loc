@@ -141,10 +141,10 @@ if($error404 || $link === '404') {
     header("HTTP/1.0 404 Not Found");        
 }
 
-// $connection = "ADMIN.php";
-// require_once($connection);
+$connection = "ADMIN.php";
+require_once($connection);
 
-// $acc = new ADMIN;
-// $result = $acc->checkLogin();
-// $utente = @$_SESSION['username'];
+$acc = new ADMIN;
+$result = $acc->checkLogin();
+$utente = @$_SESSION['username'];
 ?>

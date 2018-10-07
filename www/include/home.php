@@ -10,20 +10,19 @@ hw_setTitle($head->title);
 
 <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark main_post">
     <div class="hw-center col-md-8 px-0">
-    <h1 class="display-4 title home-title">
-        Studio Zamara
-    </h1>
-    <p class="lead my-3 excerpt">
-        Descrizione dello studio.<br>
-        "Tutte le domande richiedono una risposta certa o, almeno, una profonda ricerca."
-    </p>
-    <div class="google_search">
-        <form action="http://google.com/search" target="_blank"> 
-            <input name="q" placeholder="Google" style="width:80%; max-width:400px;">
-            <input type="submit" value="Cerca" style="width:80px;">
-        </form>
-    </div>
-    <!-- <p class="lead mb-0"><a href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>post/hw" class="text-white font-weight-bold link hw-link">Continue reading</a></p> -->
+        <h1 class="display-4 title home-title">
+            Studio Zamara
+        </h1>
+        <!-- <p class="lead my-3 excerpt">
+            Descrizione dello studio.<br>
+            "Tutte le domande richiedono una risposta certa o, almeno, una profonda ricerca."
+        </p>
+        <div class="google_search">
+            <form action="http://google.com/search" target="_blank"> 
+                <input name="q" placeholder="Google" style="width:80%; max-width:400px;">
+                <input type="submit" value="Cerca" style="width:80px;">
+            </form>
+        </div>     -->
     </div>
 </div>
 
@@ -217,12 +216,12 @@ hw_setTitle($head->title);
             var blogURL = "<a target=\"_blank\" href='" + itemURL.text() + "'>Scopri di più</a>";
 
             var itemTitle = ($(e).find("title"));
-            var blogTitle = "<h5>" + blogNumber + itemTitle.text() + "</h5>";
+            var blogTitle = "<div>" + blogNumber + itemTitle.text() + "</div>";
             var itemDesc = ($(e).find("description"));
             var blogDesc = "<p style=\"margin-bottom: 0px;\">"+itemDesc.text() + "</p>";
 
-            $("#feed").append('<div style=\"margin-bottom: 20px;\">'+blogTitle+blogDesc+blogURL+'</div>');            
-            return i<9;
+            $("#feed").append('<div style=\"margin-bottom: 20px;\">'+blogTitle+blogURL+'</div>');            
+            // return i<9;
 
         });
     });
