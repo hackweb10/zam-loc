@@ -32,18 +32,40 @@ hw_setTitle($head->title);
         <div class="col-md-9 calendario">
             <h3 class="pb-3 mb-4 border-bottom section-title">
                 Calendario
-            </h3>
+            </h3>            
 
-            <div class="posts">            
-                <div class="posts-wrapper"></div>
-                <div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div><br><br><br></div>
-            </div>
+            <!-- CALENDARIO -->
+            <table id="zamcal" style="display:none;" class=" table table-striped order-list">
+                <thead>
+                    <tr>
+                        <th scope="col">OP.</th>
+                        <th scope="col">CLIENTE</th>
+                        <th scope="col">NOTA</th>
+                        <th scope="col">DATA</th>
+                        <th scope="col">URG.</th>
+                        <th scope="col">VISTO</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            <nav class="blog-pagination">            
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7" style="text-align: left;">
+                            <input type="button" class="btn btn-lg btn-block margin-top" id="addrow" value="Aggiungi riga" />
+                            <input type="button" class="btn btn-lg btn-block margin-top" id="updaterow" value="Aggiorna" />
+                        </td>
+                    </tr>                    
+                </tfoot>
+            </table>
+
+            <!-- <nav class="blog-pagination">            
                 <a class="btn btn-outline-secondary load_more" >Altro</a>
-            </nav>
+            </nav> -->
         </div>
 
+        <!-- FEED RSS -->
         <div class="col-md-3 blog-main">
             <h3 class="pb-3 mb-4 border-bottom section-title">
                 RSS Feed
@@ -61,126 +83,128 @@ hw_setTitle($head->title);
     </div>
 </div>
 
-<!-- <div class="container posts-container">
-    <div class="row">
-        <div class="col-md-12 blog-main">
-        <h3 class="pb-3 mb-4 border-bottom section-title">
-            RSS Feed
-        </h3>
-
-        <div class="posts">            
-            <div class="posts-wrapper"></div>
-            <div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div><br><br><br></div>
-        </div>
-
-        <nav class="blog-pagination">            
-            <a class="btn btn-outline-secondary load_more" >Altro</a>
-        </nav>
-
-        </div>
-    </div>
-</div> -->
 
 
 <script>
-    //clock($('#clock'));     
+    var counter = 0;
+    $('#zamcal').show();   
 
-    if(content_loaded.frontline.length > 0){
-        // $('.main_post .title').html(content_loaded.frontline[0].title.rendered);
-        // $('.main_post .excerpt').html(content_loaded.frontline[0].excerpt.rendered);
-        // $('.main_post .link').removeClass('opaque');
-    }else{
-        //recupero del post con tag "frontline"
-        // var dataURL = wp_endpoint+'posts/?_embed&lang='+wp_lang+'&slug=hw&tags_exclude=40,41&tags=42,43'
-        // // console.log(dataURL)
-        // $.ajax({ 
-        //     type: "GET",
-        //     url: dataURL,
-        //     async: true,
-        //     cache: false,
-        //     error: function (xhr, ajaxOptions, thrownError) {				
-        //         //
-        //     },
-        //     xhr: function () {					
-        //         var xhr = new window.XMLHttpRequest();        
-        //         return xhr;
-        //     },
-        //     beforeSend: function () {					
-        //         //	
-        //     },
-        //     complete: function () {				
-        //         //            
-        //     },		
-        //     success : function(data)
-        //     {                          
-        //         // console.log('dev10n', data)       
-        //         // $('.main_post .title').html(data[0].title.rendered);
-        //         // $('.main_post .excerpt').html(data[0].excerpt.rendered);
-        //         // $('.main_post .link').removeClass('opaque');
-        //         // content_loaded.frontline = data;                
-        //     }
-        // });
+    // ZAMCAL GET
+    var send_data = { action: "zamGet", data: {} };    
+
+    $.ajax({
+        type: "POST",
+        url: "libs/call_func.php",
+        data: JSON.stringify(send_data),
+        contentType: "application/json",
+        async: true,
+        success : function(data)
+        {			  					
+            data = JSON.parse(data);  						             
+            data.forEach(function(el, i){
+                console.log(el)
+                var newRow = $("<tr>");
+                var cols = "";                
+                cols += '<td><input value="'+((el.operazione == null) ? '' : el.operazione)+'" '+((el.operazione == null) ? '' : 'disabled')+' type="text" class="form-control zaminput" count="'+el.count+'" name="operazione"/></td>';
+                cols += '<td><input value="'+((el.cliente == null) ? '' : el.cliente)+'" '+((el.cliente == null) ? '' : 'disabled')+' type="text" class="form-control zaminput" count="' + el.count + '" name="cliente"/></td>';
+                cols += '<td class="col-sm-3"><textarea type="text" class="form-control zaminput" count="' + el.count + '" name="nota">'+((el.nota == null) ? '' : el.nota)+'</textarea></td>';
+                cols += '<td><input value="'+el.data+'" type="date" class="form-control zaminput" count="' + el.count + '" name="data"/></td>';
+                cols += '<td><input value="'+el.urgenza+'" type="text" class="form-control zaminput" count="' + el.count + '" name="urgenza"/></td>';
+                cols += '<td><input '+((el.visto) ? 'checked' : '')+' type="checkbox" class="form-control zaminput" count="' + el.count + '" name="visto"/></td>';            
+                cols += '<td></td>';
+                newRow.append(cols);
+                $("table.order-list").append(newRow);   
+            });                         			
+        }
+    });    
+
+    // ZAMCAL SAVE
+    $('body').on('change', '.zaminput', function(){                
+        var data = {
+            field: $(this).attr('name'),
+            type: $(this).attr('type'),
+            count: $(this).attr('count'),
+            value: ($(this).attr('type') == 'checkbox') ? $(this).prop('checked') : $(this).val()
+        }                
+        var send_data = { action: "zamSave", data: data };
+        console.log(data)
+
+        $.ajax({
+            type: "POST",
+            url: "libs/call_func.php",
+            data: JSON.stringify(send_data),
+            contentType: "application/json",
+            async: true,
+            success : function(data)
+            {			  					
+                data = JSON.parse(data);  						 
+                console.log(data)
+                if(data.success == true){
+                    console.log('success')
+                }  						    			
+            }
+        });        
+    })
+    
+
+    // TABELLE    
+    $("#updaterow").on("click", function () {
+        location.reload();
+    });
+
+    $("#addrow").on("click", function () {
+        // ZAMCAL MAX
+        var send_data = { action: "zamMax", data: {} };    
+        $.ajax({
+            type: "POST",
+            url: "libs/call_func.php",
+            data: JSON.stringify(send_data),
+            contentType: "application/json",
+            async: true,
+            success : function(data)
+            {			
+                data = JSON.parse(data);  		  					            					 
+                counter = (data[0].count);  
+
+                counter++;
+                var newRow = $("<tr>");
+                var cols = "";
+
+                cols += '<td><input type="text" class="form-control zaminput" count="' + counter + '" name="operazione"/></td>';
+                cols += '<td><input type="text" class="form-control zaminput" count="' + counter + '" name="cliente"/></td>';
+                cols += '<td class="col-sm-3"><textarea type="text" class="form-control zaminput" count="' + counter + '" name="nota"/></td>';
+                cols += '<td><input type="date" class="form-control zaminput" count="' + counter + '" name="data"/></td>';
+                cols += '<td><input type="text" class="form-control zaminput" count="' + counter + '" name="urgenza"/></td>';
+                cols += '<td><input type="checkbox" class="form-control zaminput" count="' + counter + '" name="visto"/></td>';
+                
+                cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>';
+
+                newRow.append(cols);
+                $("table.order-list").append(newRow);               
+            }
+        });                
+    });
+
+
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();       
+        counter -= 1
+    });
+
+    function calculateRow(row) {
+        var price = +row.find('input[name^="price"]').val();
     }
 
-    //caricamento del resto
-    // if(content_loaded.sticky.length > 0){
-    //     parseSticky(content_loaded.sticky)
-    // }else{
-    //     //recupero dei due post sticky
-    //     dataURL = wp_endpoint+'posts?_embed&lang='+wp_lang+'&per_page=2&tags=40,41&tags_exclude=42,43'        
-    //     $.ajax({ 
-    //         type: "GET",
-    //         url: dataURL,
-    //         async: true,
-    //         cache: false,
-    //         error: function (xhr, ajaxOptions, thrownError) {				
-    //             //
-    //         },
-    //         xhr: function () {					
-    //             var xhr = new window.XMLHttpRequest();        
-    //             return xhr;
-    //         },
-    //         beforeSend: function () {					
-    //             //	
-    //         },
-    //         complete: function () {				
-    //             //            
-    //         },		
-    //         success : function(data)
-    //         {            
-    //             // data = JSON.parse(data);                                     
-    //             parseSticky(data)
-    //             content_loaded.sticky = data;
-    //         }
-    //     });
-    // }
-        
-    // if(!$.isEmptyObject(content_loaded.posts)){
-    //     $('.posts .spinner').hide()
-    //     for(var i = 0; i < content_loaded.posts.render.length; i++) {
-    //         $('.posts .posts-wrapper').append(content_loaded.posts.render[i])            
-    //     }
-    // }else{
-    //     home_blog = 1;
-    //     //recupero del blog
-    //     createBlog(home_blog).then(function(data){   
-    //         // console.log(data);  
-    //         content_loaded.posts = data;   
-    //         $('.posts .spinner').hide()
-    //         for(var i = 0; i < data.render.length; i++) {
-    //             $('.posts .posts-wrapper').append(data.render[i]);                  
-    //             for(var cat = 0; cat < data.data[i].categories.length; cat++){			
-    //             	if(data.data[i].categories[cat] != 1 && data.data[i].categories[cat] != 23){
-    //                     parseCategory(data.data[i].categories[cat], i, data.data[i].id).then(function(result){                                        
-    //                         $('.blog-post[post="post-'+result[2]+'"] .categories').append(($('.blog-post[post="post-'+result[2]+'"] .categories').html() === '') ? result[1].name : ', '+result[1].name);
-    //                     }); 
-    //                 }	                        
-    //             }          
-    //         }
-    //     })
-    // }
+    function calculateGrandTotal() {
+        var grandTotal = 0;
+        $("table.order-list").find('input[name^="price"]').each(function () {
+            grandTotal += +$(this).val();
+        });
+        $("#grandtotal").text(grandTotal.toFixed(2));
+    }
 
-    // Altro
+    // CARICAMENTO ALTRO
     $('.load_more').click(function(e){
         home_blog += 1;        
         $('.posts .spinner').show();
@@ -201,6 +225,7 @@ hw_setTitle($head->title);
         })
     });    
     
+    // FEED RSS
     $.ajax({
         url: 'https://cors.io/?http://www.ipsoa.it/RSS-Feeds/Lavoro.aspx',
         type: 'GET',
@@ -220,7 +245,7 @@ hw_setTitle($head->title);
             var itemDesc = ($(e).find("description"));
             var blogDesc = "<p style=\"margin-bottom: 0px;\">"+itemDesc.text() + "</p>";
 
-            $("#feed").append('<div style=\"margin-bottom: 20px;\">'+blogTitle+blogURL+'</div>');            
+            $("#feed").append('<div style=\"margin-bottom: 10px;\">'+blogTitle+blogURL+'</div>');            
             // return i<9;
 
         });

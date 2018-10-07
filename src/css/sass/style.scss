@@ -594,13 +594,13 @@ textarea {
 
 .dropdown-menu{
     font-size: 16px;
-    background-color: $color4;
+    // background-color: $color4;
 }
 
 .dropdown-menu .dropdown-item{    
-    color: $gray;
+    // color: $gray;
     &:hover{
-        color: $black !important;
+        // color: $black !important;
     }
 }
 
@@ -794,4 +794,50 @@ textarea {
 
 .google_search{
 	width: 80%;
+}
+
+
+// TABLE
+#zamcal td{
+	padding: 1px 1px;	
+	border: none;	
+	vertical-align: top;
+}
+#zamcal td input{	
+	border-radius: 0;
+	padding: 0px 1px;	
+	font-size: 12px;
+}
+#zamcal td textarea{	
+	border-radius: 0;
+	padding: 0px 1px;	
+	padding-top: 8px;
+	font-size: 12px;
+	height: calc(2.25rem + 2px);
+}
+#zamcal td input:focus{	
+	color: #495057;	
+	border-color: #80bdff;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.0);	
+}
+#zamcal td textarea:focus{	
+	color: #495057;	
+	border-color: #80bdff;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.0);	
+}
+#zamcal .margin-top{
+	margin-top: 20px;	
+}
+#zamcal thead th{
+	border: 0px;
+}
+#zamcal .btn{
+	color: #000 !important;
+	
+	padding: 8px;
+}
+#zamcal .ibtnDel{
+	padding: 7px 10px;
 }

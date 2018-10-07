@@ -1245,7 +1245,65 @@ class ADMIN extends DB
             array_push($result, ['id' => $ob->id, 'name' => $ob->nome, 'description' => $ob->descrizione]);
         }        	
         echo json_encode($result);		    
-    }	    
+    }	 
+    
+    
+    // ZAMARA
+    //MAX
+    function zamMax(){
+        $result = [];
+        $db = $this->conn;
+        $sql = 'SELECT MAX(count) AS count
+            FROM zam_calendar            
+        ';		        	
+        $stmt = $db->prepare($sql);
+        $stmt->execute([]);	        
+        $i = $stmt->rowCount();    	            
+        while($ob = $stmt->fetchObject()){            
+            array_push($result, ['count' => $ob->count]);
+        }        	
+        echo json_encode($result);
+    }
+
+    //GET    
+    function zamGet(){
+        $result = [];
+        $db = $this->conn;
+        $sql = 'SELECT count, operazione, cliente, nota, data, urgenza, visto FROM zam_calendar ORDER BY data DESC';		        	
+        $stmt = $db->prepare($sql);
+        $stmt->execute([]);	        
+        $i = $stmt->rowCount();    	            
+        while($ob = $stmt->fetchObject()){            
+            array_push($result, [
+                'count' => $ob->count, 
+                'operazione' => $ob->operazione, 
+                'cliente' => $ob->cliente,
+                'nota' => $ob->nota,
+                'data' => $ob->data,
+                'urgenza' => $ob->urgenza,
+                'visto' => $ob->visto
+            ]);
+        }        	
+        echo json_encode($result);
+    }
+
+    //SAVE
+    function zamSave($data){
+        $result = ['success' => 0];                
+        $db = $this->conn;
+        $sql = 'INSERT INTO zam_calendar (count,'.$data->field.')
+            VALUES (?,?)
+            ON DUPLICATE KEY UPDATE 
+            '.$data->field.'=?
+        ';
+        $stmt = $db->prepare($sql)->execute([            
+            $data->count,            
+            $data->value,            
+            $data->value
+        ]);        
+        $result['success'] = 1;                
+        echo json_encode($result);
+    }
     
 }
 ?>
