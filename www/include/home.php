@@ -4,14 +4,14 @@ $relative_path = __DIR__.'/../libs/head.php';
 $first_load = (@$head_loaded) ? true : false;
 if(!$first_load) require_once($relative_path);
 if(!$first_load) ob_start("ob_gzhandler"); // AJAX size
-$head->title = 'Studio Zamara'; // SEO
+$head->title = 'CDF STUDIO'; // SEO
 hw_setTitle($head->title);
 ?>
 
 <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark main_post">
     <div class="hw-center col-md-8 px-0">
         <h1 class="display-4 title home-title">
-            Studio Zamara
+            CDF Studio
         </h1>
         <!-- <p class="lead my-3 excerpt">
             Descrizione dello studio.<br>

@@ -18,7 +18,7 @@ $acc->checkLogin();
 			<?php endif; ?>
 		</div>
 		<div class="col-4 text-center">
-			<a class="blog-header-logo text-dark hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']; ?>"><span class="logo logo1">Studio</span><span class="logo logo2"> Zamara</span></a>
+			<a class="blog-header-logo text-dark hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']; ?>"><span class="logo logo1">CDF</span><span class="logo logo2"> Studio</span></a>
 		</div>
 		<div class="col-4 d-flex justify-content-end align-items-center">
 			<!-- <a class="text-muted" href="#">
@@ -34,7 +34,7 @@ $acc->checkLogin();
 	</header>
 
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light ">
-		<a class="navbar-brand hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']; ?>"><span class="logo logo1">Studio</span><span class="logo logo2"> Zamara</span></a>
+		<a class="navbar-brand hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']; ?>"><span class="logo logo1">CDF</span><span class="logo logo2"> Studio</span></a>
 		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<!-- <span class="navbar-toggler-icon"></span> -->
 			<span></span>

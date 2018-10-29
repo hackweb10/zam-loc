@@ -20,10 +20,10 @@ class DB
     var $pass = "franci";
     var $dbname = "zamara";       
     //remote
-    var $host2 = "62.149.150.193";     
-    var $user2 = "Sql677570";
-    var $pass2 = "0aae578b";
-    var $dbname2 = "Sql677570_5";    
+    var $host2 = "localhost";     
+    var $user2 = "cdfstudi_interna";
+    var $pass2 = "Franci1010";
+    var $dbname2 = "cdfstudi_internal";    
 
     var $whitelist = array(
         'localhost',

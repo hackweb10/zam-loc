@@ -102,7 +102,7 @@
     </main>
 
     <footer class="blog-footer">
-        <p><span class="color-1">Studio</span> Zamara<br>2018</p>
+        <p><span class="color-1">CDF</span> Studio<br>2018</p>
         <!-- <p class="blog-links">
             <a href="https://twitter.com/frank10gm" target="_blank">Twitter</a>
             <a class="hw-link" href="<?php echo $_SESSION['HOST'].$_SESSION['uri_lang']?>cookie" >Cookie Policy</a>
